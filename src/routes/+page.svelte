@@ -11,10 +11,10 @@
  
 	export	let currencyOptions = [];
 	export  let selectedTimezone;
-    export  let reactiveTimezoneOptions = [];
+        export  let reactiveTimezoneOptions = [];
 	export	let countryOptions = '';
-    export  let countries = [];
-    export let selectedCodes = [];
+        export  let countries = [];
+        export let selectedCodes = [];
 	export	let imageUrl = null;
 	export  let phone='';
 	export	let iti;
@@ -23,7 +23,7 @@
 	
 	export let data;
 	
-    let name = data.profiledata.name;
+        let name = data.profiledata.name;
 	let  website = data.profiledata.website;
 	let cityName=data.profiledata.address.cityName;
 	let  currencyCode = data.profiledata.currencyCode.code;
@@ -44,9 +44,8 @@
 				
 		phone,
 		 currencyCode: {
-
-					code: currencyCode,
-					},
+                    code: currencyCode,
+                  },
 		 preferredDateformat,
 		 timeZone,
 		 preferredCountries: selectedLabels,
@@ -130,18 +129,11 @@ try {
 		"https://api.recruitly.io/api/lookup/countries?apiKey=TEST69513C4B379BD5594CD0AAC9ECA436CA2C83"
 
 	);
-
 	const responseData = await response.json();
-
-
-
 	if (Array.isArray(responseData.data)) {
-
-		countries = responseData.data.map((country) => ({
-
-			name: country.name,
-
-			value: country.code.toLowerCase(),
+	countries = responseData.data.map((country) => ({
+	name: country.name,
+	value: country.code.toLowerCase(),
 
 		}));
 
@@ -165,15 +157,10 @@ try {
 
 }
 
-
-
 function handleSelection(event) {
-
 if (event && event.detail && event.detail.value) {
-
-	selectedCodes = event.detail.value.map((selectedCountry) =>
-
-		selectedCountry.value.toLowerCase()
+selectedCodes = event.detail.value.map((selectedCountry) =>
+selectedCountry.value.toLowerCase()
 
 	);
 
