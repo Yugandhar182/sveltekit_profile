@@ -21,11 +21,6 @@
 	
 	
 	
-	
-	
-	
-   
-	
 	export let data;
 	
     let name = data.profiledata.name;
@@ -38,11 +33,8 @@
 	let preferredCountryCode1 = preferredCountryCode.toUpperCase();
 	let  preferredCountries = data.profiledata.mobilePreferences.preferredCountries;
 	let selectedLabels = preferredCountries.split(",");
-	console.log(preferredCountryCode1);
-	console.log(currencyCode);
-	console.log(selectedLabels);
-	console.log(cityName);
-  
+	
+	
     async function updateData() {
       const updatedData = {
         ...data.profiledata,
@@ -298,14 +290,12 @@ fetchCountryData ();
 
   </script>
     <main class="container">
-	<form  class="form-container" method="POST">
-
-		<div class="grid gap-6 mb-6 md:grid-cols-1">
-			<div>
+	<form   method="POST">
+            <div>
 			  <Label>Company Profile</Label>
 			  <hr>
 			</div>
-		  </div>
+		
 
 		  <div class="mb-6">
 			<Label for="company_logo" class="mb-2">Company Logo</Label>
@@ -321,14 +311,14 @@ fetchCountryData ();
 		  
 		<div class="mb-6">
 			<Label for="address" class="mb-2">Address</Label>
-			<Input type="text" id="address" bind:value={cityName} required />
+			<Input name="address" bind:value={cityName} required />
 	   </div>
 		
 
 	
 			<div class="mb-6">
 			<Label for="phone" class="mb-2" >Phone</Label>
-			<Input type="tel" id="phone-input" autocomplete="off"  on:input={handleInput}  class="form-select  block w-full py-2.5 pl-3 pr-10 text-base border border-gray-300 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600" style="width:500px;" />
+			<Input type="tel" id="phone-input" autocomplete="off"  on:input={handleInput}  class="form-select  block w-full py-2.5 pl-3 pr-10 text-base border border-gray-300 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600" style="width:600px;" />
 	
 		</div>
 
@@ -415,7 +405,7 @@ fetchCountryData ();
 	  margin-left: 550px;
 	  width: 500px;
 	 height: 200PX;
-	  margin-top:-310px;
+	  margin-top:-250px;
 	}
 	.container{
 	 
